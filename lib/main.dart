@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proof_of_concept/screens/home_screen.dart';
+import 'package:proof_of_concept/screens/mobile_screen/home_screen.dart';
+import 'package:proof_of_concept/screens/web_screen/web_screen.dart';
+import 'package:proof_of_concept/utils/responsive_layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const ResponsiveLayout(
+        desktopBody: WebScreen(),
+        mobileBody: HomeScreen(),
+      ),
     );
   }
 }
